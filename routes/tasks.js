@@ -16,15 +16,6 @@ function taskSelector(restaurantId) {
     };
 }
 
-router.get('/tasks',function(req,res){
-    //Retrieve the tasks 
-    const tasks = taskUtils.getTasks()
-    
-    res.render('tasks', {
-        numberOfTasks : tasks.length, 
-        storedTasks :tasks
-    })
-})
 
 router.get('/tasks/:rid',function(req,res){
     // To send back the right restaurant details!
@@ -131,6 +122,37 @@ router.get('/tasks/:rid/delete', function(req,res){
     taskUtils.storeTasks(filteredTasks)
 
     res.redirect('/tasks')
+})
+
+
+// SORT TASKS:
+router.get('/tasks',function(req,res){
+    let currentOrder = req.query.order
+    let nextOrder = "desc"
+
+    if(currentOrder != "asc" && currentOrder != "desc"){
+        currentOrder = "asc"
+    }
+    if(currentOrder == "desc"){
+        nextOrder = "asc"
+    }
+    //retrieve the tasks:
+    const tasks = taskUtils.getTasks()
+    tasks.sort(function(taskA,taskB){
+        if(
+            (currentOrder === "asc" && taskA.title.toLowerCase() > taskB.title.toLowerCase()) ||(currentOrder === "desc" && taskB.title.toLowerCase() > taskA.title.toLowerCase())
+        ){
+            return 1
+        }
+        return -1
+    })
+    console.log("gello")
+    console.log(nextOrder)
+    res.render("tasks", {
+        storedTasks: tasks,    
+        numberOfTasks: tasks.length,
+        nextOrder: nextOrder
+    });
 })
 
 
