@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head') %>
+    <link rel="stylesheet" href="/styles/tasks.css" />
+  </head>
+  <body>
+    <%- include('includes/header') %>
+    <%- include('includes/side-drawer') %>
+    <main>
+      <h1> <%= task.title %></h1>
+      <p> <%= task.details %></p>
+      <p id=""> <%= task.duedate %> </p>
+    </main>
+  </body>
+</html>

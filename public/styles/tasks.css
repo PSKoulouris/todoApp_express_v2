@@ -1,0 +1,93 @@
+main {
+    max-width: 40rem;
+}
+
+#restaurants-list {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.task-item {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px black;
+    background-color: white;
+    font-size: 20px;
+    color: #66b3ff;
+    text-align: left;
+}
+
+.task-item h2 {
+    font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    margin: 0.25rem 0;
+}
+
+
+.task-item p {
+    margin: 0.2rem 0;
+    color: #ff9999;
+}
+
+.task-item #duedate{
+    color: red;
+}
+
+.task-meta {
+    margin-bottom: 0.5rem;
+}
+
+.task-meta p {
+    color: #5580aa;
+}
+
+.task-actions {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.task-actions a,.btn {
+    padding: 0.5rem 1.5rem;
+    background-color: #66b3ff;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    margin: 0 0.4rem;
+    cursor: pointer;
+    border: none;
+}
+
+.task-actions a:hover,
+.task-actions a:active,.btn:hover {
+    background-color: #0080ff;
+}
+
+.task-actions #edit-btn {
+    background-color: #66ffb3;
+}
+
+.task-actions #delete-btn {
+    background-color: #f67171;
+}
+
+.task-actions #edit-btn:hover{
+    background-color: #00ff80;
+}
+
+.task-actions #delete-btn:hover {
+    background-color: #f33f3f;
+}
+
+#title{
+    color: white;
+}
+
+#details{
+    
+}
+
+#duedate{
+    color: red;
+}

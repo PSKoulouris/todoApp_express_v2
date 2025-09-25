@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head') %> 
+    <link rel="stylesheet" href="/styles/form.css" />
+</head>
+
+<body>
+  <%- include('includes/header') %>
+    <%- include('includes/side-drawer') %>
+      <main>
+        <h1>Edit Task!</h1>
+        <form action="/tasks/<%= task.rId %>/edit" method="POST">
+          <div class="form-control">
+            <label for="name">Task Title</label>
+            <input type="text" id="name" name="title" required />
+          </div>
+
+          <div class="form-control">
+            <label for="name">When will be your Task Due Date?</label>
+            <input type="datetime-local" id="name" name="duedate" required />
+          </div>
+
+          <div class="form-control">
+            <label for="description">Details related to the Task</label>
+            <textarea name="details" id="description" rows="5" required></textarea>
+          </div>
+          <button>Add Task</button>
+         <a href="/tasks" class="cancel-link">Cancel Modification</a>
+        </form>
+      </main>
+</body>
+
+</html>

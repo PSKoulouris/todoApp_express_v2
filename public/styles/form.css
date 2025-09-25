@@ -1,0 +1,73 @@
+main {
+    max-width: 40rem;
+}
+
+form {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    background-color: #66b3ff;
+    text-align: left;
+}
+
+.form-control {
+    margin-bottom: 0.75rem;
+}
+
+.cancel-link {
+    color: #f33f3f;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 20px;
+    transition: background-color 0.2s;
+}
+
+.cancel-link:hover{
+    background-color: #f33f3f;
+    color: white;
+}
+
+label,
+input,
+textarea {
+    display: block;
+    width: 100%;
+}
+
+label {
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+input,
+textarea {
+    font: inherit;
+    padding: 0.25rem;
+    border-radius: 4px;
+    background-color: #b3d9ff;
+    border: 1px solid #66b3ff;
+    color: black;
+    box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+    background-color: #b3d9ff;
+}
+
+button {
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    background-color: #66ffb3;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    border: 1px solid white;
+}
+
+button:hover {
+    background-color: #00ff80;
+}
+

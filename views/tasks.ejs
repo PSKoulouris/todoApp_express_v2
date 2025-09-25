@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head') %>
+    <link rel="stylesheet" href="/styles/tasks.css" />
+  </head>
+  <body>
+    <%- include('includes/header') %>
+    <%- include('includes/side-drawer') %>
+    <main>
+      <h1>List of Tasks</h1>
+
+      <% if (numberOfTasks === 0) { %>
+        <p>No Tasks Found! You can add Some!</p>
+      <% } else {%>
+        <p>
+          We found 
+          <% if(numberOfTasks ===1 ){%> 
+            <%= numberOfTasks %> task
+          <% }else{ %>
+              <%= numberOfTasks %> tasks
+          <% } %>
+        </p>
+
+        <form action="/tasks" method="GET">
+          <input type="hidden" value="<%= nextOrder %>" name="order">
+          <button class="btn">Change Order</button>
+        </form>
+
+        <ul id="restaurants-list">
+          <% for( const task of storedTasks) { %>
+              <%- 
+                include('includes/tasks/task-item',
+                  {
+                    task : task
+                  }
+                ) 
+              %>
+          <% } %>
+          </ul>
+      <% } %>
+
+       
+    </main>
+  </body>
+</html>

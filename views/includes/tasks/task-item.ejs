@@ -1,0 +1,35 @@
+<li class="task-item">
+    <article>
+       
+        <h2>
+            <%= task.title %>
+        </h2>
+        <div class="task-meta">
+            <p>
+                <%= task.details %>
+            </p>
+            <p id="duedate">
+                <%= task.duedate %>
+            </p>
+        </div>
+        
+        <div class="task-actions">
+            <a href="/tasks/<%= task.rId %>">
+                View Task
+            </a>
+
+            <a href="/tasks/<%= task.rId %>/edit" id="edit-btn">
+                Edit
+            </a>
+
+            <a 
+                href="/tasks/<%= task.rId %>/delete" 
+                onclick="return confirm('Are you sure you want to Delete this Task?')" 
+                id="delete-btn"
+            >
+                Delete
+            </a>
+
+        </div>
+    </article>
+</li>
